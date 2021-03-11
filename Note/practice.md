@@ -1,9 +1,9 @@
-<h1>h1
-<h2>h2
-<h3>h3
-<h4>h4
-<h5>h5
-<h6>h6
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
 
 <em>em</em>
 <strong>strong</strong>
@@ -16,7 +16,7 @@
 > first
 
 
-<h3>Line
+<h3>Line</h3>
 <hr/>
 
 1. first
@@ -28,9 +28,10 @@
   * IDK
 
 CodeBlock (Just tab once):
+ 
+ printf("Hello World!");
+ 
 
-   printf("Hello World!");
-  
 Link [Google][googlelink]
 
 [googlelink]: https://google.com "google link!!"
