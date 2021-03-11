@@ -27,7 +27,7 @@
 * -in?
   * IDK
 
-CodeBlock (Just 4 sapce):
+CodeBlock (Just 4 space):
 
     printf("Hello World!");
     
