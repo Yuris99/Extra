@@ -46,8 +46,11 @@ public class CSVs {
                             c.setValue(line, temp);
                         }
                     }
-                    catch (NumberFormatException e) {
-                        c.setValue(line, emp[i]);
+                    catch (NumberFormatException e)  {
+                    if(emp[i].startsWith("\"") && emp[i].endsWith("\""))
+                        emp[i] = emp[i].substring(1, Math.max(emp[i].length()-1, 1));
+                        c.setValue(line, emp[i].replace("\"\"", "\""));
+
                     }
                 }
                 line++;
