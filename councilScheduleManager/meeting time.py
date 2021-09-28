@@ -13,10 +13,10 @@ week = {"월" : 0,
         "일" : 6,}
 
 #최소 시작시간
-start_hour = 9
+start_hour = 0
 
 #최대 시작시간
-end_hour = 23
+end_hour = 24
 
 #5:평일만 7: 주말까지
 week_search = 5
@@ -38,6 +38,7 @@ def main():
     os.chdir('schedules')
     for file in csvlist:
         data = pd.read_csv(file)
+        print(file)
         print(data)
         for i in data.index:
             counter = data['시작시간'][i].split(':')
@@ -47,7 +48,7 @@ def main():
             endtime[0] = int(endtime[0])
             endtime[1] = int(endtime[1])
             weeker = week[data['요일'][i]]
-            while counter[0] != endtime[0] and counter[1] != endtime[1]:
+            while counter[0] != endtime[0] or counter[1] != endtime[1]:
                 schedules[weeker][counter[0]][counter[1]] += 1
                 counter[1] += 1
                 if counter[1] >= 60:
