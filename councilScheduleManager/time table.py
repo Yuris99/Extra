@@ -52,7 +52,7 @@ def main():
                 for m in range(60):
                     schedules[w][h][m].append(file)
 
-
+        check_week = [False, False, False, False, False, False, False]
         for i in data.index:
             counter = data['시작시간'][i].split(':')
             counter[0] = int(counter[0])
@@ -61,6 +61,8 @@ def main():
             endtime[0] = int(endtime[0])
             endtime[1] = int(endtime[1])
             weeker = week[data['요일'][i]]
+            if check_week[weeker] == False:
+                check_week[weeker] = True
             while counter[0] != endtime[0] or counter[1] != endtime[1]:
                 try:
                     schedules[weeker][counter[0]][counter[1]].remove(file)
@@ -70,6 +72,14 @@ def main():
                 if counter[1] >= 60:
                     counter[0] += 1
                     counter[1] = 0
+            
+        for w in range(week_search):
+            if check_week[w] == False:
+                for h in range(start_hour, end_hour):
+                    for m in range(60):
+                        schedules[w][h][m].remove(file)
+
+        
 
     cnt = 1
     print(str(schedules))
