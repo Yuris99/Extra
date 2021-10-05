@@ -37,7 +37,3 @@ Link [Google][googlelink]
 
 [googlelink]: https://google.com "google link!!"
 
-IDK what is this...
-
-
- 
