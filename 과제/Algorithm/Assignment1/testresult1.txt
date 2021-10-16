@@ -1,0 +1,8 @@
+=============== Start Test "test.exe" ===============
+insertion 테스트 시작
+1번째 테스트케이스 실행
+실행시간: 845ms
+실행완료.
+정답입니다!
+cnt_comp: 499999 cnt_swap: 0 run_time: 1ms 
+2번째 테스트케이스 실행

@@ -1,0 +1,63 @@
+=============== Start Test "test.exe" ===============
+heap 테스트 시작
+1번째 테스트케이스 실행
+명령어 : test.exe heap < randinput0.txt > testoutput.txt
+실행시간: 935ms
+실행완료.
+정답입니다!
+cnt_comp: 17396502 cnt_swap: 9023826 run_time: 187ms 
+2번째 테스트케이스 실행
+명령어 : test.exe heap < randinput1.txt > testoutput.txt
+실행시간: 898ms
+실행완료.
+정답입니다!
+cnt_comp: 17396030 cnt_swap: 9023086 run_time: 174ms 
+3번째 테스트케이스 실행
+명령어 : test.exe heap < randinput2.txt > testoutput.txt
+실행시간: 908ms
+실행완료.
+정답입니다!
+cnt_comp: 17396609 cnt_swap: 9023346 run_time: 177ms 
+4번째 테스트케이스 실행
+명령어 : test.exe heap < randinput3.txt > testoutput.txt
+실행시간: 893ms
+실행완료.
+정답입니다!
+cnt_comp: 17396853 cnt_swap: 9024379 run_time: 173ms 
+5번째 테스트케이스 실행
+명령어 : test.exe heap < randinput4.txt > testoutput.txt
+실행시간: 1071ms
+실행완료.
+정답입니다!
+cnt_comp: 17398190 cnt_swap: 9024549 run_time: 206ms 
+6번째 테스트케이스 실행
+명령어 : test.exe heap < randinput5.txt > testoutput.txt
+실행시간: 938ms
+실행완료.
+정답입니다!
+cnt_comp: 17397371 cnt_swap: 9023569 run_time: 179ms 
+7번째 테스트케이스 실행
+명령어 : test.exe heap < randinput6.txt > testoutput.txt
+실행시간: 888ms
+실행완료.
+정답입니다!
+cnt_comp: 17395420 cnt_swap: 9022815 run_time: 171ms 
+8번째 테스트케이스 실행
+명령어 : test.exe heap < randinput7.txt > testoutput.txt
+실행시간: 888ms
+실행완료.
+정답입니다!
+cnt_comp: 17397220 cnt_swap: 9023750 run_time: 171ms 
+9번째 테스트케이스 실행
+명령어 : test.exe heap < randinput8.txt > testoutput.txt
+실행시간: 885ms
+실행완료.
+정답입니다!
+cnt_comp: 17396971 cnt_swap: 9024527 run_time: 172ms 
+10번째 테스트케이스 실행
+명령어 : test.exe heap < randinput9.txt > testoutput.txt
+실행시간: 885ms
+실행완료.
+정답입니다!
+cnt_comp: 17396556 cnt_swap: 9024046 run_time: 173ms 
+=============== End Test "test.exe" ===============

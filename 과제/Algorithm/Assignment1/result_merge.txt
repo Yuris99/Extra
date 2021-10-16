@@ -1,0 +1,63 @@
+=============== Start Test "test.exe" ===============
+merge 테스트 시작
+1번째 테스트케이스 실행
+명령어 : test.exe merge < randinput0.txt > testoutput.txt
+실행시간: 843ms
+실행완료.
+정답입니다!
+cnt_comp: 8837903 cnt_swap: 9475712 run_time: 90ms 
+2번째 테스트케이스 실행
+명령어 : test.exe merge < randinput1.txt > testoutput.txt
+실행시간: 916ms
+실행완료.
+정답입니다!
+cnt_comp: 8836226 cnt_swap: 9475712 run_time: 92ms 
+3번째 테스트케이스 실행
+명령어 : test.exe merge < randinput2.txt > testoutput.txt
+실행시간: 891ms
+실행완료.
+정답입니다!
+cnt_comp: 8837038 cnt_swap: 9475712 run_time: 87ms 
+4번째 테스트케이스 실행
+명령어 : test.exe merge < randinput3.txt > testoutput.txt
+실행시간: 826ms
+실행완료.
+정답입니다!
+cnt_comp: 8837007 cnt_swap: 9475712 run_time: 86ms 
+5번째 테스트케이스 실행
+명령어 : test.exe merge < randinput4.txt > testoutput.txt
+실행시간: 1011ms
+실행완료.
+정답입니다!
+cnt_comp: 8837104 cnt_swap: 9475712 run_time: 92ms 
+6번째 테스트케이스 실행
+명령어 : test.exe merge < randinput5.txt > testoutput.txt
+실행시간: 828ms
+실행완료.
+정답입니다!
+cnt_comp: 8836402 cnt_swap: 9475712 run_time: 89ms 
+7번째 테스트케이스 실행
+명령어 : test.exe merge < randinput6.txt > testoutput.txt
+실행시간: 816ms
+실행완료.
+정답입니다!
+cnt_comp: 8836654 cnt_swap: 9475712 run_time: 88ms 
+8번째 테스트케이스 실행
+명령어 : test.exe merge < randinput7.txt > testoutput.txt
+실행시간: 800ms
+실행완료.
+정답입니다!
+cnt_comp: 8837120 cnt_swap: 9475712 run_time: 87ms 
+9번째 테스트케이스 실행
+명령어 : test.exe merge < randinput8.txt > testoutput.txt
+실행시간: 1007ms
+실행완료.
+정답입니다!
+cnt_comp: 8837697 cnt_swap: 9475712 run_time: 116ms 
+10번째 테스트케이스 실행
+명령어 : test.exe merge < randinput9.txt > testoutput.txt
+실행시간: 965ms
+실행완료.
+정답입니다!
+cnt_comp: 8837510 cnt_swap: 9475712 run_time: 96ms 
+=============== End Test "test.exe" ===============

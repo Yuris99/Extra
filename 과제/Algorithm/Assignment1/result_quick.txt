@@ -1,0 +1,63 @@
+=============== Start Test "test.exe" ===============
+quick 테스트 시작
+1번째 테스트케이스 실행
+명령어 : test.exe quick < randinput0.txt > testoutput.txt
+실행시간: 864ms
+실행완료.
+정답입니다!
+cnt_comp: 11899178 cnt_swap: 6162249 run_time: 94ms 
+2번째 테스트케이스 실행
+명령어 : test.exe quick < randinput1.txt > testoutput.txt
+실행시간: 879ms
+실행완료.
+정답입니다!
+cnt_comp: 11161405 cnt_swap: 5844229 run_time: 89ms 
+3번째 테스트케이스 실행
+명령어 : test.exe quick < randinput2.txt > testoutput.txt
+실행시간: 890ms
+실행완료.
+정답입니다!
+cnt_comp: 11862735 cnt_swap: 6905413 run_time: 90ms 
+4번째 테스트케이스 실행
+명령어 : test.exe quick < randinput3.txt > testoutput.txt
+실행시간: 815ms
+실행완료.
+정답입니다!
+cnt_comp: 11593843 cnt_swap: 5986158 run_time: 88ms 
+5번째 테스트케이스 실행
+명령어 : test.exe quick < randinput4.txt > testoutput.txt
+실행시간: 815ms
+실행완료.
+정답입니다!
+cnt_comp: 11651469 cnt_swap: 5930630 run_time: 90ms 
+6번째 테스트케이스 실행
+명령어 : test.exe quick < randinput5.txt > testoutput.txt
+실행시간: 871ms
+실행완료.
+정답입니다!
+cnt_comp: 12739101 cnt_swap: 6446626 run_time: 94ms 
+7번째 테스트케이스 실행
+명령어 : test.exe quick < randinput6.txt > testoutput.txt
+실행시간: 817ms
+실행완료.
+정답입니다!
+cnt_comp: 11249008 cnt_swap: 5651716 run_time: 87ms 
+8번째 테스트케이스 실행
+명령어 : test.exe quick < randinput7.txt > testoutput.txt
+실행시간: 959ms
+실행완료.
+정답입니다!
+cnt_comp: 11884425 cnt_swap: 6415320 run_time: 94ms 
+9번째 테스트케이스 실행
+명령어 : test.exe quick < randinput8.txt > testoutput.txt
+실행시간: 925ms
+실행완료.
+정답입니다!
+cnt_comp: 11462664 cnt_swap: 5930956 run_time: 103ms 
+10번째 테스트케이스 실행
+명령어 : test.exe quick < randinput9.txt > testoutput.txt
+실행시간: 860ms
+실행완료.
+정답입니다!
+cnt_comp: 11243998 cnt_swap: 6142481 run_time: 92ms 
+=============== End Test "test.exe" ===============
