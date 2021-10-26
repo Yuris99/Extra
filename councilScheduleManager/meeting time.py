@@ -30,6 +30,8 @@ conf_time = 60
 #시간 배열
 schedules = [[[0 for m in range(60)] for h in range(24)] for w in range(7)]
 
+#제외인원
+
 def main():
     csvlist = os.listdir(path)
     #print(csvlist)

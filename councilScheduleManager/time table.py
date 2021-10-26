@@ -98,5 +98,7 @@ def main():
             print("탐테 " + str(h) + "시 30분 : " + str(schedules[w][h][30]))
         print("\n\n")
 
+    
+
 if __name__=="__main__":
     main()
