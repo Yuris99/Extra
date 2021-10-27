@@ -47,9 +47,8 @@ time_divide2 = [[[10,00], [11, 00]],
 timelist = {}
 
 #제외인원
-ignore_member = [["지석훈.csv", "신혜원.csv", "신대니.csv", "최지형.csv", "박채수.csv", "정해민.csv", "김환희.csv", "박현규.csv", "민수정.csv", "이원호.csv", "홍지훈.csv", "김동헌.csv", "염우진.csv",
-                "이상현.csv", "최우인.csv", "신민주.csv"],
-                ["지석훈.csv", "최지형.csv", "한태빈.csv", "신혜원.csv", "신대니.csv", "정해민.csv", "민수정.csv", "김대웅.csv", "이상현.csv"]]
+ignore_member = [[],
+                []]
 
 
 def main():
@@ -97,6 +96,7 @@ def main():
                 if counter[1] >= 60:
                     counter[0] += 1
                     counter[1] = 0
+                    
         for w in range(week_search):
             if check_week[w] == False and file in movetime:
                 for h in range(start_hour, end_hour):
