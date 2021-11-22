@@ -1,4 +1,4 @@
-function [a, r2] = linearReg(x, y)
+function [x_plot, y_plot] = linearReg(x, y)
 
 x = x'; y = y';
 

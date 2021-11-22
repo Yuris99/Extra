@@ -52,6 +52,7 @@ ignore_member = [[],
                 []]
 
 
+
 def main():
     csvlist = os.listdir(path)
     #print(csvlist)
