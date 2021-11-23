@@ -117,55 +117,65 @@ end
 
 
 %1인당 소득 대비 체납 금액
+figure(1);
 yy1 = smooth(income_wo18v, deliper1_wo18v); % 체납 금액 데이터 보정
 linearReg(income_wo18v, yy1);
 % 19년도 데이터는 빨간색 점으로 표현
 scatter(income_19,deliper1_19,30,"red","filled");
+hold on
+title("1인당 소득에 따른 체납금액");
 xlabel('1인당 소득(천원)');
 ylabel('1인당 체납 금액(천원)');
 
 %1인당 소득 대비 체납자 비율
-yy2 = smooth(income_wo18v, delipers_wo18v); % 체납자 비율 데이터 보정
 figure(2);
+yy2 = smooth(income_wo18v, delipers_wo18v); % 체납자 비율 데이터 보정
 linearReg(income_wo18v,yy2);
 scatter(income_19,delipers_19,30,"red","filled");
+hold on
+title("1인당 소득에 따른 체납자 비율");
 xlabel('1인당 소득(천원)');
 ylabel('체납자 비율(%)');
 
 % 지역내 총소득에 따른 지역 체납금액
-figure(1);
+figure(3);
 linearReg(incomeall_v, delinquent_v);
 hold on
+title("지역내 총소득에 따른 체납금액(전체)");
 xlabel('지역 총 소득(천원)')
 ylabel('체납금액(천원)')
 
 % 지역내 총소득에 따른 지역 체납금액 (수도권제외)
-figure(3);
+figure(4);
 linearReg(incomeall_wo19v, delinquent_wo19v);
 hold on
+title("지역내 총소득에 따른 체납금액(수도권 제외)");
 xlabel('지역 총 소득(천원)')
 ylabel('체납금액(천원)')
 
 % 지역내 총소득에 따른 체납자율
-figure(2);
+figure(5);
 indeliy1 = smooth(incomeall_v, delipers_v); % 데이터 보정
 linearReg(incomeall_v, indeliy1);
 hold on
+title("지역내 총소득에 따른 체납자 비율");
 xlabel('지역 총 소득(천원)')
 ylabel('인구당 체납건수(회)')
 
 % 지역내 총소득에 따른 지역 체납금액 ~18 + 테스트
-figure(4);
+figure(6);
 [indep_x, indep_y] = linearReg(incomeall_to18v, delinquent_to18v);
 hold on
+title("지역내 총소득에 따른 체납금액");
 xlabel('지역 총 소득(천원)')
 ylabel('체납금액(천원)')
 
-figure(5);
+figure(7);
 plot(indep_x, indep_y);
 hold on
 grid on
 scatter(incomeall_test, delinquent_test);
+title("지역내 총소득에 따른 체납금액 테스트(19년도 데이터)");
 xlabel('지역 총 소득(천원)')
 ylabel('체납금액(천원)')
 

@@ -1,0 +1,437 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>main</title><meta name="generator" content="MATLAB 9.11"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-11-23"><meta name="DC.source" content="main.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">&#45936;&#51060;&#53552; &#44032;&#51256;&#50724;&#44592;</a></li><li><a href="#3">&#45936;&#51060;&#53552; &#51221;&#51228;</a></li><li><a href="#4">&#45936;&#51060;&#53552; &#52636;&#47141;</a></li></ul></div><pre class="codeinput">importdata <span class="string">linearReg.m</span>;
+
+format <span class="string">long</span>;
+</pre><h2 id="2">&#45936;&#51060;&#53552; &#44032;&#51256;&#50724;&#44592;</h2><pre class="codeinput">income = readmatrix(<span class="string">"Data\1&#51064;&#45817;_&#51648;&#50669;&#52509;&#49548;&#46301;2013-2019.csv"</span>, <span class="string">"Range"</span>,<span class="string">"B3:H19"</span>); <span class="comment">% &#45800;&#50948; &#52380;&#50896;</span>
+population = readmatrix(<span class="string">"Data\&#51064;&#44396;&#49688;2013-2019.csv"</span>, <span class="string">"Range"</span>,<span class="string">"B3:H19"</span>);
+cases = readmatrix(<span class="string">"Data\&#52404;&#45225;&#44148;&#49688;2013-2019.xlsx"</span>, <span class="string">"Range"</span>,<span class="string">"D7:J23"</span>);
+delinquent = readmatrix(<span class="string">"Data\2.3.1_&#52404;&#45225;&#50529;_&#51221;&#47532;_&#49892;&#51201;&#8544;_&#51648;&#50669;&middot;&#49464;&#47785;_2006_20211115201948.xlsx"</span>, <span class="string">"Range"</span>,<span class="string">"C4:I20"</span>); <span class="comment">% &#45800;&#50948;: &#50613;&#50896;</span>
+<span class="comment">% &#53685;&#54633; &#45800;&#50948; &#52380;&#50896;</span>
+income = income * 1; <span class="comment">% 1&#51064;&#45817; &#52509;&#49548;&#46301;</span>
+delinquent = delinquent * 100000; <span class="comment">% &#52404;&#45225;&#44552;&#50529;</span>
+
+deliper1 = delinquent./population; <span class="comment">% 1&#51064;&#45817; &#52404;&#45225; &#44552;&#50529;</span>
+
+incomeall = income .* population; <span class="comment">% &#51648;&#50669; &#52509;&#49548;&#46301;</span>
+
+delipers = cases./population; <span class="comment">% &#51064;&#44396;&#45817; &#52404;&#45225; &#44148;&#49688;</span>
+</pre><h2 id="3">&#45936;&#51060;&#53552; &#51221;&#51228;</h2><pre>1: &#49436;&#50872;  2: &#48512;&#49328;  3: &#45824;&#44396;  4: &#51064;&#52380;  5: &#44305;&#51452;  6: &#45824;&#51204;
+7: &#50872;&#49328;  8: &#49464;&#51333;  9: &#44221;&#44592; 10: &#44053;&#50896; 11: &#52649;&#48513; 12: &#52649;&#45224;
+13: &#48513;&#45224; 14: &#51204;&#45224; 15: &#44221;&#48513; 16: &#44221;&#45224; 17: &#51228;&#51452;</pre><pre class="codeinput"><span class="comment">%&#50872;&#49328; &#51228;&#51452; &#45936;&#51060;&#53552; &#51228;&#50808;, 18&#45380;&#46020; &#44620;&#51648; &#45936;&#51060;&#53552;</span>
+income_wo18 = income(:,1:6);
+delipers_wo18= delipers(:,1:6);
+deliper1_wo18 = deliper1(:,1:6);
+income_wo18(17,:) = [];
+income_wo18(7,:) = [];
+delipers_wo18(17,:) = [];
+delipers_wo18(7,:) = [];
+deliper1_wo18(17,:) = [];
+deliper1_wo18(7,:) = [];
+
+data_wo18 = [income_wo18(:) delipers_wo18(:) deliper1_wo18(:)];
+data_wo18 = rmmissing(data_wo18);
+
+income_wo18v = data_wo18(:,1);
+delipers_wo18v = data_wo18(:,2);
+deliper1_wo18v = data_wo18(:,3);
+
+<span class="comment">%19&#45380;&#46020; &#45936;&#51060;&#53552; &#52628;&#52636;</span>
+income_19 = income(:,7);
+delipers_19 = delipers(:,7);
+deliper1_19 = deliper1(:,7);
+
+<span class="comment">%&#50872;&#49328; &#51228;&#51452; &#45936;&#51060;&#53552; &#51228;&#50808;</span>
+income_19(17,:) = [];
+income_19(7,:) = [];
+delipers_19(17,:) = [];
+delipers_19(7,:) = [];
+deliper1_19(17,:) = [];
+deliper1_19(7,:) = [];
+
+data = [delinquent(:) deliper1(:) incomeall(:) delipers(:) income(:)];
+data = rmmissing(data); <span class="comment">% &#45572;&#46973;&#45936;&#51060;&#53552; &#49325;&#51228;</span>
+
+delinquent_v = data(:, 1);
+deliper1_v = data(:,2);
+incomeall_v = data(:,3);
+delipers_v = data(:,4);
+income_v = data(:,5);
+
+<span class="comment">% &#49688;&#46020;&#44428; &#51228;&#50808; &#45936;&#51060;&#53552;</span>
+incomeall_wo19 = incomeall;
+delinquent_wo19 = delinquent;
+incomeall_wo19(9,:) = [];
+incomeall_wo19(1,:) = [];
+delinquent_wo19(9,:) = [];
+delinquent_wo19(1,:) = [];
+data_wo19 = [incomeall_wo19(:) delinquent_wo19(:)];
+data_wo19 = rmmissing(data_wo19);
+
+incomeall_wo19v = data_wo19(:,1);
+delinquent_wo19v = data_wo19(:,2);
+
+<span class="comment">% ~18 &#51077;&#47141;&#48320;&#49688;</span>
+incomeall_to18 = incomeall;
+delinquent_to18 = delinquent;
+incomeall_to18(:,7) = [];
+delinquent_to18(:,7) = [];
+data_to18 = [incomeall_to18(:) delinquent_to18(:)];
+data_to18 = rmmissing(data_to18);
+
+incomeall_to18v = data_to18(:,1);
+delinquent_to18v = data_to18(:,2);
+
+<span class="comment">% 19&#45380;&#46020; &#53580;&#49828;&#53944; &#48320;&#49688;</span>
+incomeall_test = incomeall(:,7);
+delinquent_test = delinquent(:,7);
+data_test = [incomeall_test(:) delinquent_test(:)];
+data_test = rmmissing(data_test);
+
+incomeall_testv = data_test(:,1);
+delinquent_testv = data_test(:,2);
+</pre><h2 id="4">&#45936;&#51060;&#53552; &#52636;&#47141;</h2><pre class="codeinput"><span class="comment">% &#51648;&#50669;&#48324; &#45936;&#51060;&#53552; PLOT</span>
+<span class="keyword">for</span> i = 1:0 <span class="comment">% &#44032;&#47532;&#44592;</span>
+    <span class="comment">% &#49464;&#51333;(&#45936;&#51060;&#53552;&#45572;&#46973;), &#50872;&#49328;(&#45936;&#51060;&#53552;&#51060;&#49345;) &#51228;&#50808;</span>
+    <span class="keyword">if</span> i == 8
+        <span class="keyword">continue</span>
+    <span class="keyword">end</span>
+    income_s = incomeall(i,:);
+    income_s = income_s(:);
+    deliper_s = deliper1(i, :);
+    deliper_s = deliper_s(:);
+
+
+    linearReg(income_s, deliper_s);
+<span class="keyword">end</span>
+
+<span class="comment">% &#51068;&#44292;&#52636;&#47141; &#53076;&#46300;</span>
+
+
+<span class="comment">%1&#51064;&#45817; &#49548;&#46301; &#45824;&#48708; &#52404;&#45225; &#44552;&#50529;</span>
+figure(1);
+yy1 = smooth(income_wo18v, deliper1_wo18v); <span class="comment">% &#52404;&#45225; &#44552;&#50529; &#45936;&#51060;&#53552; &#48372;&#51221;</span>
+linearReg(income_wo18v, yy1);
+<span class="comment">% 19&#45380;&#46020; &#45936;&#51060;&#53552;&#45716; &#48744;&#44036;&#49353; &#51216;&#51004;&#47196; &#54364;&#54788;</span>
+scatter(income_19,deliper1_19,30,<span class="string">"red"</span>,<span class="string">"filled"</span>);
+hold <span class="string">on</span>
+title(<span class="string">"1&#51064;&#45817; &#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#44552;&#50529;"</span>);
+xlabel(<span class="string">'1&#51064;&#45817; &#49548;&#46301;(&#52380;&#50896;)'</span>);
+ylabel(<span class="string">'1&#51064;&#45817; &#52404;&#45225; &#44552;&#50529;(&#52380;&#50896;)'</span>);
+
+<span class="comment">%1&#51064;&#45817; &#49548;&#46301; &#45824;&#48708; &#52404;&#45225;&#51088; &#48708;&#50984;</span>
+figure(2);
+yy2 = smooth(income_wo18v, delipers_wo18v); <span class="comment">% &#52404;&#45225;&#51088; &#48708;&#50984; &#45936;&#51060;&#53552; &#48372;&#51221;</span>
+linearReg(income_wo18v,yy2);
+scatter(income_19,delipers_19,30,<span class="string">"red"</span>,<span class="string">"filled"</span>);
+hold <span class="string">on</span>
+title(<span class="string">"1&#51064;&#45817; &#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#51088; &#48708;&#50984;"</span>);
+xlabel(<span class="string">'1&#51064;&#45817; &#49548;&#46301;(&#52380;&#50896;)'</span>);
+ylabel(<span class="string">'&#52404;&#45225;&#51088; &#48708;&#50984;(%)'</span>);
+
+<span class="comment">% &#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#51648;&#50669; &#52404;&#45225;&#44552;&#50529;</span>
+figure(3);
+linearReg(incomeall_v, delinquent_v);
+hold <span class="string">on</span>
+title(<span class="string">"&#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#44552;&#50529;(&#51204;&#52404;)"</span>);
+xlabel(<span class="string">'&#51648;&#50669; &#52509; &#49548;&#46301;(&#52380;&#50896;)'</span>)
+ylabel(<span class="string">'&#52404;&#45225;&#44552;&#50529;(&#52380;&#50896;)'</span>)
+
+<span class="comment">% &#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#51648;&#50669; &#52404;&#45225;&#44552;&#50529; (&#49688;&#46020;&#44428;&#51228;&#50808;)</span>
+figure(4);
+linearReg(incomeall_wo19v, delinquent_wo19v);
+hold <span class="string">on</span>
+title(<span class="string">"&#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#44552;&#50529;(&#49688;&#46020;&#44428; &#51228;&#50808;)"</span>);
+xlabel(<span class="string">'&#51648;&#50669; &#52509; &#49548;&#46301;(&#52380;&#50896;)'</span>)
+ylabel(<span class="string">'&#52404;&#45225;&#44552;&#50529;(&#52380;&#50896;)'</span>)
+
+<span class="comment">% &#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#51088;&#50984;</span>
+figure(5);
+indeliy1 = smooth(incomeall_v, delipers_v); <span class="comment">% &#45936;&#51060;&#53552; &#48372;&#51221;</span>
+linearReg(incomeall_v, indeliy1);
+hold <span class="string">on</span>
+title(<span class="string">"&#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#51088; &#48708;&#50984;"</span>);
+xlabel(<span class="string">'&#51648;&#50669; &#52509; &#49548;&#46301;(&#52380;&#50896;)'</span>)
+ylabel(<span class="string">'&#51064;&#44396;&#45817; &#52404;&#45225;&#44148;&#49688;(&#54924;)'</span>)
+
+<span class="comment">% &#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#51648;&#50669; &#52404;&#45225;&#44552;&#50529; ~18 + &#53580;&#49828;&#53944;</span>
+figure(6);
+[indep_x, indep_y] = linearReg(incomeall_to18v, delinquent_to18v);
+hold <span class="string">on</span>
+title(<span class="string">"&#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#44552;&#50529;"</span>);
+xlabel(<span class="string">'&#51648;&#50669; &#52509; &#49548;&#46301;(&#52380;&#50896;)'</span>)
+ylabel(<span class="string">'&#52404;&#45225;&#44552;&#50529;(&#52380;&#50896;)'</span>)
+
+figure(7);
+plot(indep_x, indep_y);
+hold <span class="string">on</span>
+grid <span class="string">on</span>
+scatter(incomeall_test, delinquent_test);
+title(<span class="string">"&#51648;&#50669;&#45236; &#52509;&#49548;&#46301;&#50640; &#46384;&#47480; &#52404;&#45225;&#44552;&#50529; &#53580;&#49828;&#53944;(19&#45380;&#46020; &#45936;&#51060;&#53552;)"</span>);
+xlabel(<span class="string">'&#51648;&#50669; &#52509; &#49548;&#46301;(&#52380;&#50896;)'</span>)
+ylabel(<span class="string">'&#52404;&#45225;&#44552;&#50529;(&#52380;&#50896;)'</span>)
+</pre><pre class="codeoutput">   0.620736127399352
+
+   0.408854167904248
+
+   0.978062377972693
+
+   0.742150741093335
+
+   0.544279042207682
+
+   0.977186435472746
+
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <img vspace="5" hspace="5" src="main_02.png" alt=""> <img vspace="5" hspace="5" src="main_03.png" alt=""> <img vspace="5" hspace="5" src="main_04.png" alt=""> <img vspace="5" hspace="5" src="main_05.png" alt=""> <img vspace="5" hspace="5" src="main_06.png" alt=""> <img vspace="5" hspace="5" src="main_07.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+importdata linearReg.m;
+
+format long;
+
+%% 데이터 가져오기
+income = readmatrix("Data\1인당_지역총소득2013-2019.csv", "Range","B3:H19"); % 단위 천원
+population = readmatrix("Data\인구수2013-2019.csv", "Range","B3:H19");
+cases = readmatrix("Data\체납건수2013-2019.xlsx", "Range","D7:J23");
+delinquent = readmatrix("Data\2.3.1_체납액_정리_실적Ⅰ_지역·세목_2006_20211115201948.xlsx", "Range","C4:I20"); % 단위: 억원
+% 통합 단위 천원
+income = income * 1; % 1인당 총소득
+delinquent = delinquent * 100000; % 체납금액
+
+deliper1 = delinquent./population; % 1인당 체납 금액
+
+incomeall = income .* population; % 지역 총소득
+
+delipers = cases./population; % 인구당 체납 건수
+
+%% 데이터 정제
+%  1: 서울  2: 부산  3: 대구  4: 인천  5: 광주  6: 대전 
+%  7: 울산  8: 세종  9: 경기 10: 강원 11: 충북 12: 충남
+% 13: 북남 14: 전남 15: 경북 16: 경남 17: 제주
+
+%울산 제주 데이터 제외, 18년도 까지 데이터
+income_wo18 = income(:,1:6);
+delipers_wo18= delipers(:,1:6);
+deliper1_wo18 = deliper1(:,1:6);
+income_wo18(17,:) = [];
+income_wo18(7,:) = [];
+delipers_wo18(17,:) = [];
+delipers_wo18(7,:) = [];
+deliper1_wo18(17,:) = [];
+deliper1_wo18(7,:) = [];
+
+data_wo18 = [income_wo18(:) delipers_wo18(:) deliper1_wo18(:)];
+data_wo18 = rmmissing(data_wo18);
+
+income_wo18v = data_wo18(:,1);
+delipers_wo18v = data_wo18(:,2);
+deliper1_wo18v = data_wo18(:,3);
+
+%19년도 데이터 추출
+income_19 = income(:,7);
+delipers_19 = delipers(:,7);
+deliper1_19 = deliper1(:,7);
+
+%울산 제주 데이터 제외
+income_19(17,:) = [];
+income_19(7,:) = [];
+delipers_19(17,:) = [];
+delipers_19(7,:) = [];
+deliper1_19(17,:) = [];
+deliper1_19(7,:) = [];
+
+data = [delinquent(:) deliper1(:) incomeall(:) delipers(:) income(:)];
+data = rmmissing(data); % 누락데이터 삭제
+
+delinquent_v = data(:, 1);
+deliper1_v = data(:,2);
+incomeall_v = data(:,3);
+delipers_v = data(:,4);
+income_v = data(:,5);
+
+% 수도권 제외 데이터
+incomeall_wo19 = incomeall;
+delinquent_wo19 = delinquent;
+incomeall_wo19(9,:) = [];
+incomeall_wo19(1,:) = [];
+delinquent_wo19(9,:) = [];
+delinquent_wo19(1,:) = [];
+data_wo19 = [incomeall_wo19(:) delinquent_wo19(:)];
+data_wo19 = rmmissing(data_wo19);
+
+incomeall_wo19v = data_wo19(:,1);
+delinquent_wo19v = data_wo19(:,2);
+
+% ~18 입력변수
+incomeall_to18 = incomeall;
+delinquent_to18 = delinquent;
+incomeall_to18(:,7) = [];
+delinquent_to18(:,7) = [];
+data_to18 = [incomeall_to18(:) delinquent_to18(:)];
+data_to18 = rmmissing(data_to18);
+
+incomeall_to18v = data_to18(:,1);
+delinquent_to18v = data_to18(:,2);
+
+% 19년도 테스트 변수
+incomeall_test = incomeall(:,7);
+delinquent_test = delinquent(:,7);
+data_test = [incomeall_test(:) delinquent_test(:)];
+data_test = rmmissing(data_test);
+
+incomeall_testv = data_test(:,1);
+delinquent_testv = data_test(:,2);
+
+
+%% 데이터 출력
+
+% 지역별 데이터 PLOT
+for i = 1:0 % 가리기
+    % 세종(데이터누락), 울산(데이터이상) 제외
+    if i == 8
+        continue
+    end
+    income_s = incomeall(i,:);
+    income_s = income_s(:);
+    deliper_s = deliper1(i, :);
+    deliper_s = deliper_s(:);
+
+
+    linearReg(income_s, deliper_s);
+end
+
+% 일괄출력 코드 
+
+
+%1인당 소득 대비 체납 금액
+figure(1);
+yy1 = smooth(income_wo18v, deliper1_wo18v); % 체납 금액 데이터 보정
+linearReg(income_wo18v, yy1);
+% 19년도 데이터는 빨간색 점으로 표현
+scatter(income_19,deliper1_19,30,"red","filled");
+hold on
+title("1인당 소득에 따른 체납금액");
+xlabel('1인당 소득(천원)');
+ylabel('1인당 체납 금액(천원)');
+
+%1인당 소득 대비 체납자 비율
+figure(2);
+yy2 = smooth(income_wo18v, delipers_wo18v); % 체납자 비율 데이터 보정
+linearReg(income_wo18v,yy2);
+scatter(income_19,delipers_19,30,"red","filled");
+hold on
+title("1인당 소득에 따른 체납자 비율");
+xlabel('1인당 소득(천원)');
+ylabel('체납자 비율(%)');
+
+% 지역내 총소득에 따른 지역 체납금액
+figure(3);
+linearReg(incomeall_v, delinquent_v);
+hold on
+title("지역내 총소득에 따른 체납금액(전체)");
+xlabel('지역 총 소득(천원)')
+ylabel('체납금액(천원)')
+
+% 지역내 총소득에 따른 지역 체납금액 (수도권제외)
+figure(4);
+linearReg(incomeall_wo19v, delinquent_wo19v);
+hold on
+title("지역내 총소득에 따른 체납금액(수도권 제외)");
+xlabel('지역 총 소득(천원)')
+ylabel('체납금액(천원)')
+
+% 지역내 총소득에 따른 체납자율
+figure(5);
+indeliy1 = smooth(incomeall_v, delipers_v); % 데이터 보정
+linearReg(incomeall_v, indeliy1);
+hold on
+title("지역내 총소득에 따른 체납자 비율");
+xlabel('지역 총 소득(천원)')
+ylabel('인구당 체납건수(회)')
+
+% 지역내 총소득에 따른 지역 체납금액 ~18 + 테스트
+figure(6);
+[indep_x, indep_y] = linearReg(incomeall_to18v, delinquent_to18v);
+hold on
+title("지역내 총소득에 따른 체납금액");
+xlabel('지역 총 소득(천원)')
+ylabel('체납금액(천원)')
+
+figure(7);
+plot(indep_x, indep_y);
+hold on
+grid on
+scatter(incomeall_test, delinquent_test);
+title("지역내 총소득에 따른 체납금액 테스트(19년도 데이터)");
+xlabel('지역 총 소득(천원)')
+ylabel('체납금액(천원)')
+
+
+##### SOURCE END #####
+--></body></html>
