@@ -23,9 +23,12 @@ delipers = cases./population; % 인구당 체납 건수
 % 13: 북남 14: 전남 15: 경북 16: 경남 17: 제주
 
 %울산 제주 데이터 제외, 18년도 까지 데이터
-income_wo18 = income(:,1:6);
-delipers_wo18= delipers(:,1:6);
-deliper1_wo18 = deliper1(:,1:6);
+%income_wo18 = income(:,1:6);
+%delipers_wo18= delipers(:,1:6);
+%deliper1_wo18 = deliper1(:,1:6);
+income_wo18 = income;
+delipers_wo18= delipers;
+deliper1_wo18 = deliper1;
 income_wo18(17,:) = [];
 income_wo18(7,:) = [];
 delipers_wo18(17,:) = [];
@@ -121,7 +124,7 @@ figure(1);
 yy1 = smooth(income_wo18v, deliper1_wo18v); % 체납 금액 데이터 보정
 linearReg(income_wo18v, yy1);
 % 19년도 데이터는 빨간색 점으로 표현
-scatter(income_19,deliper1_19,30,"red","filled");
+%scatter(income_19,deliper1_19,30,"red","filled");
 hold on
 title("1인당 소득에 따른 체납금액");
 xlabel('1인당 소득(천원)');
@@ -131,7 +134,7 @@ ylabel('1인당 체납 금액(천원)');
 figure(2);
 yy2 = smooth(income_wo18v, delipers_wo18v); % 체납자 비율 데이터 보정
 linearReg(income_wo18v,yy2);
-scatter(income_19,delipers_19,30,"red","filled");
+%scatter(income_19,delipers_19,30,"red","filled");
 hold on
 title("1인당 소득에 따른 체납자 비율");
 xlabel('1인당 소득(천원)');
