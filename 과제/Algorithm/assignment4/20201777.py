@@ -39,4 +39,4 @@ for idx in range(len(sol)-1):
 
     total_cost += dist
 
-print('final cost: '+str(total_cost))
+print('final cost: '+ str(total_cost))
